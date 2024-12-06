@@ -29,12 +29,14 @@ float snoise( float2 v )
 	return 130.0 * dot( m, g );
 }
 
-float fbm(float2 p, int octaves, float lacunarity, float gain)
+float fbm(float2 p, float noiseScale, float amplitudeScaler, int octaves, float lacunarity, float gain)
 {
     float amplitude = 1.0;
     float frequency = 1.0;
     float sum = 0.0;       
     float totalAmplitude = 0.0; 
+	
+	p *= noiseScale;
 
     for (int i = 0; i < octaves; i++)
     {
@@ -46,7 +48,7 @@ float fbm(float2 p, int octaves, float lacunarity, float gain)
         amplitude *= gain;
     }
 
-    return sum / totalAmplitude;
+    return (sum / totalAmplitude) * amplitudeScaler;
 }
 
 //...........LIGHTING..............//

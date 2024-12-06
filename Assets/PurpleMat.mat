@@ -68,37 +68,38 @@ Material:
     - _AddPrecomputedVelocity: 1
     - _AlphaCutoff: 0.5
     - _Bias: 0
-    - _CubemapInfluince: 0.506
+    - _CubemapInfluince: 0.707
     - _CubemapMip: 1.99
     - _Float0: 8
     - _Gloss: 0.614
     - _LightWrapping: 1
     - _Metallic: 0
+    - _NormalGradient: 0.66
     - _Power: 1.9
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Roughness: 0.123
+    - _Roughness: 0
     - _Scale: 1.47
-    - _Shininess: 12.5
+    - _Shininess: 39.3
     - _SkyboxInfluinc: 0.789
     - _Smoothness: 0
     - _Specular: 1
-    - _fbmamplitude: 0
-    - _fbmgain: 0.31
-    - _fbmlacunarity: 2.6
-    - _fbmoctaves: 2
-    - _fbmscale: 1.61
+    - _fbmamplitude: 0.5
+    - _fbmgain: 0.24
+    - _fbmlacunarity: 2.71
+    - _fbmoctaves: 2.38
+    - _fbmscale: -0.13
     - _fbmzeroonenormalize: 0
     - _lodSteps: 9
     - _shininess: 23.2
     m_Colors:
     - _ColorTint: {r: 1, g: 1, b: 1, a: 0}
-    - _CubemapTInt: {r: 1, g: 1, b: 1, a: 0}
-    - _DiffuseTint: {r: 0.9563071, g: 1.0592736, b: 0.96098745, a: 0}
+    - _CubemapTInt: {r: 0, g: 1, b: 0.1874106, a: 0}
+    - _DiffuseTint: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.5254902, g: 0.2235294, b: 0.49806604, a: 0}
+    - _RimColor: {r: 0.6543389, g: 0, b: 0.5687493, a: 0}
     - _SpecularColor: {r: 1, g: 0.8503065, b: 0.5019635, a: 0}
-    - _SpecularTint: {r: 1.6229293, g: 2.7494657, b: 2.9619787, a: 0}
+    - _SpecularTint: {r: 2, g: 2, b: 2, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
