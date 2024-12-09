@@ -53,8 +53,43 @@ float fbm(float2 p, float noiseScale, float amplitudeScaler, int octaves, float 
 
 //...........LIGHTING..............//
 
-float PerceptualRoughnessToMipmap(float perceptualRoughness, int lodSteps)
+float PerceptualRoughnessToMipmap(float perceptualRoughness, float lodSteps)
 {
     perceptualRoughness = perceptualRoughness * (1.7 - 0.7 * perceptualRoughness);
     return perceptualRoughness * lodSteps;
+}
+
+float DiffuseLighting(float3 normal, float3 lightDir)
+{
+    return smoothstep(-1, 1, dot(normal, lightDir));
+}
+
+float3 SpecularLighting(float3 normal, float3 viewDir, float3 lightDir, float smoothness, float3 glossinessColor)
+{
+	float3 halfDir = normalize(lightDir + viewDir); 
+	float N = smoothness * 128.0;
+	float energyCompensation = (N + 2.0) / 8.0;
+	float specIntensity = pow(max(dot(normal, halfDir), 0.0), N); 
+
+	return specIntensity * glossinessColor * energyCompensation;
+}
+
+float3 SpecularEnvironment(samplerCUBE Cubemap, float roughness, float lodSteps, float3 viewDir, float3 normal)
+{
+	float3 coords = reflect(-viewDir, normal);
+	float mip = PerceptualRoughnessToMipmap(roughness, lodSteps);
+	float3 specEnv = texCUBElod(Cubemap, float4(coords.x, coords.y, coords.z, mip)).rgb;
+	return specEnv;
+}
+
+float3 CalculateLighting (sampler2D DiffuseGradientTex, float3 DiffuseTint, float3 glossinessColor, 
+	float smoothness, float3 normal, float3 lightDir, float3 viewDir) 
+{
+	float diff = DiffuseLighting(normal, lightDir);
+	float3 diffColored = tex2D(DiffuseGradientTex, float2(diff, 0)).rgb * DiffuseTint;
+
+	smoothness = max(smoothness, 0.001);
+	float3 specColored = SpecularLighting(normal, viewDir, lightDir, smoothness, glossinessColor);
+
+	return diffColored + specColored;
 }

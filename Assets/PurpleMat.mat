@@ -11,8 +11,10 @@ Material:
   m_Shader: {fileID: 4800000, guid: fd9d8d9d163862189b739d5e356acd3d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_ValidKeywords:
+  - _RECEIVE_SHADOWS_OFF
+  m_InvalidKeywords:
+  - _RECEIVESHADOWS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -28,7 +30,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DiffuseLightingGradient:
-        m_Texture: {fileID: 2800000, guid: 769768dc7b35b2b9db92ba742321cf16, type: 3}
+        m_Texture: {fileID: 2800000, guid: 76ee0a24a4187eabe9041c8f5ffd020f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GradientColor:
@@ -68,38 +70,41 @@ Material:
     - _AddPrecomputedVelocity: 1
     - _AlphaCutoff: 0.5
     - _Bias: 0
-    - _CubemapInfluince: 0.707
+    - _CubemapDesaturation: 0.392
+    - _CubemapFresnel: 0.315
+    - _CubemapInfluince: 0.827
     - _CubemapMip: 1.99
     - _Float0: 8
     - _Gloss: 0.614
     - _LightWrapping: 1
     - _Metallic: 0
-    - _NormalGradient: 0.66
+    - _NormalGradient: 1
     - _Power: 1.9
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _Roughness: 0
+    - _ReceiveShadows: 0
+    - _Roughness: 0.047
     - _Scale: 1.47
-    - _Shininess: 39.3
+    - _Shininess: 40.5
     - _SkyboxInfluinc: 0.789
-    - _Smoothness: 0
+    - _Smoothness: 1
     - _Specular: 1
-    - _fbmamplitude: 0.5
+    - _fbmamplitude: 1.27
     - _fbmgain: 0.24
-    - _fbmlacunarity: 2.71
-    - _fbmoctaves: 2.38
-    - _fbmscale: -0.13
+    - _fbmlacunarity: 2.17
+    - _fbmoctaves: 1
+    - _fbmscale: 0.1
     - _fbmzeroonenormalize: 0
     - _lodSteps: 9
     - _shininess: 23.2
     m_Colors:
     - _ColorTint: {r: 1, g: 1, b: 1, a: 0}
-    - _CubemapTInt: {r: 0, g: 1, b: 0.1874106, a: 0}
-    - _DiffuseTint: {r: 1, g: 1, b: 1, a: 0}
+    - _CubemapTInt: {r: 0.96862745, g: 0.7376142, b: 0, a: 0}
+    - _DiffuseTint: {r: 0.28072542, g: 0.28072542, b: 0.28072542, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.6543389, g: 0, b: 0.5687493, a: 0}
+    - _GlosinessColor: {r: 1, g: 0.95759493, b: 0, a: 0}
+    - _RimColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 0.8503065, b: 0.5019635, a: 0}
-    - _SpecularTint: {r: 2, g: 2, b: 2, a: 0}
+    - _SpecularTint: {r: 1.920313, g: 2.57201, b: 2.670157, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
