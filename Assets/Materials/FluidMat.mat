@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FluidMat
+  m_Shader: {fileID: 4800000, guid: fd9d8d9d163862189b739d5e356acd3d, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _RECEIVE_SHADOWS_OFF
+  m_InvalidKeywords:
+  - _RECEIVESHADOWS_OFF
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Cubemap:
+        m_Texture: {fileID: 8900000, guid: d6a64d96999aec647a489f7d73c1a4c6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DiffuseLightingGradient:
+        m_Texture: {fileID: 2800000, guid: 769768dc7b35b2b9db92ba742321cf16, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GradientColor:
+        m_Texture: {fileID: 2800000, guid: 65d50f8cf76888702afd3ffd2752b7ca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularLightingGradient:
+        m_Texture: {fileID: 2800000, guid: 5088526201b0cb583b1c006367c1c3fc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture0:
+        m_Texture: {fileID: 8900000, guid: f0da1b7e50ee70fa2a7750ae1502cc56, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AddPrecomputedVelocity: 1
+    - _AlphaCutoff: 0.5
+    - _Bias: 0
+    - _CubemapDesaturation: 0.192
+    - _CubemapFresnel: 1
+    - _CubemapInfluince: 0.758
+    - _CubemapMip: 1.99
+    - _Float0: 8
+    - _Gloss: 0.614
+    - _LightWrapping: 1
+    - _Metallic: 0
+    - _NoiseAmplitude: 0.07
+    - _NoiseScale: 6.96
+    - _NormalGradient: 1
+    - _Power: 1.9
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 0
+    - _Roughness: 0
+    - _Scale: 1.47
+    - _Shininess: 40.5
+    - _SkyboxInfluinc: 0.789
+    - _Smoothness: 1
+    - _Specular: 1
+    - _fbmamplitude: 1.27
+    - _fbmgain: 0.24
+    - _fbmlacunarity: 2.17
+    - _fbmoctaves: 1
+    - _fbmscale: 0.1
+    - _fbmzeroonenormalize: 0
+    - _lodSteps: 9
+    - _shininess: 23.2
+    m_Colors:
+    - _ColorTint: {r: 1, g: 1, b: 1, a: 0}
+    - _CubemapTInt: {r: 1, g: 0.74874157, b: 0.16134012, a: 0}
+    - _DiffuseTint: {r: 0.38074654, g: 0.38074654, b: 0.38074654, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GlosinessColor: {r: 0.35918602, g: 0.3850996, b: 0.10650163, a: 0}
+    - _RimColor: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecularColor: {r: 1, g: 0.8503065, b: 0.5019635, a: 0}
+    - _SpecularTint: {r: 1.920313, g: 2.57201, b: 2.670157, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
