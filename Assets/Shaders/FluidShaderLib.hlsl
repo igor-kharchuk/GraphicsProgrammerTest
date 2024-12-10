@@ -1,5 +1,5 @@
 ///..................FBM NOISE.......................///
-
+/*
 float3 mod2D289( float3 x ) { return x - floor( x * ( 1.0 / 289.0 ) ) * 289.0; }
 float2 mod2D289( float2 x ) { return x - floor( x * ( 1.0 / 289.0 ) ) * 289.0; }
 float3 permute( float3 x ) { return mod2D289( ( ( x * 34.0 ) + 1.0 ) * x ); }
@@ -49,7 +49,7 @@ float fbm(float2 p, float noiseScale, float amplitudeScaler, int octaves, float 
     }
 
     return (sum / totalAmplitude) * amplitudeScaler;
-}
+} */
 
 //...........LIGHTING..............//
 

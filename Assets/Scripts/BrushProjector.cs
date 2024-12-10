@@ -34,9 +34,6 @@ public class BrushProjector : MonoBehaviour {
 
     void Update() {
 
-        brushSize += Input.mouseScrollDelta.y * 0.25f;
-        brushSize = Mathf.Clamp(brushSize, 0.1f, 3f);
-
         bool paint = false;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, paintableLayers)) {
@@ -56,17 +53,19 @@ public class BrushProjector : MonoBehaviour {
         DrawBrushGizmo();
     }
 
+    void OnDestroy() {
+        paintedRT?.Release();
+    }
+
     public Vector3 GetBrushPosition() {
         return hitPoint;
     }
 
     private void DrawBrushGizmo() {
         gizmoObject.position = GetBrushPosition();
-        gizmoObject.localScale = Vector3.one * brushSize;
     }
 
     private void SetGizmoColor(Color color) {
-        color.a = 0.15f;
         gizmoObjectMaterial.color = color;
     }
 
