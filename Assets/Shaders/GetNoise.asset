@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GetNoise
   m_EditorClassIdentifier: 
   m_functionInfo: "// Made with Amplify Shader Editor v1.9.7.1\n// Available at the
-    Unity Asset Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=19701\nNode;AmplifyShaderEditor.NoiseGeneratorNode;4;-480,0;Inherit;False;Simplex3D;False;False;2;0;FLOAT3;0,0,0;False;1;FLOAT;2.34;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;6;-688,112;Inherit;False;Noise
+    Unity Asset Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=19701\nNode;AmplifyShaderEditor.FunctionInput;6;-688,112;Inherit;False;Noise
     Scale;1;2;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.DynamicAppendNode;8;-928,0;Inherit;False;FLOAT3;4;0;FLOAT2;0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionInput;5;-1392,0;Inherit;False;UVs;2;1;False;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.SimpleTimeNode;9;-1184,80;Inherit;False;1;0;FLOAT;0.1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;10;0,0;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;11;-240,80;Inherit;False;Noise
-    Amplitude;1;0;False;1;0;FLOAT;0.2;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionOutput;0;256,0;Inherit;False;True;-1;Output;0;False;1;0;FLOAT;0;False;1;FLOAT;0\nWireConnection;4;0;8;0\nWireConnection;4;1;6;0\nWireConnection;8;0;5;0\nWireConnection;8;2;9;0\nWireConnection;10;0;4;0\nWireConnection;10;1;11;0\nWireConnection;0;0;10;0\nASEEND*/\n//CHKSM=BAE17A84A90131855499007FC3364A5FA5300DB2"
+    Amplitude;1;0;False;1;0;FLOAT;0.2;False;1;FLOAT;0\nNode;AmplifyShaderEditor.NoiseGeneratorNode;4;-480,0;Inherit;False;Simplex3D;False;False;2;0;FLOAT3;0,0,0;False;1;FLOAT;2.34;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionOutput;0;256,0;Inherit;False;True;-1;Output;0;False;1;0;FLOAT;0;False;1;FLOAT;0\nWireConnection;8;0;5;0\nWireConnection;8;2;9;0\nWireConnection;10;0;4;0\nWireConnection;10;1;11;0\nWireConnection;4;0;8;0\nWireConnection;4;1;6;0\nWireConnection;0;0;10;0\nASEEND*/\n//CHKSM=9484CF356F08E2D7EC61F6FD2C4EE5E6E1CBC433"
   m_functionName: 
   m_description: 
   m_additionalIncludes:

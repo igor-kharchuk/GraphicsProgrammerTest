@@ -19,7 +19,7 @@ public class BrushProjector : MonoBehaviour {
 
     void Start() {
         if(paintedRT == null){
-            paintedRT = new RenderTexture(512, 512, 0, RenderTextureFormat.RG32);
+            paintedRT = new RenderTexture(512, 512, 0, RenderTextureFormat.RG16);
             paintedRT.enableRandomWrite = true;
         }
 
