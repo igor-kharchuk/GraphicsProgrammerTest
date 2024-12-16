@@ -130,7 +130,7 @@ Shader "Hidden/PaintShader"
 				float2 appendResult85 = (float2(lerpResult26 , lerpResult83));
 				
 				
-				finalColor = float4( appendResult85, 0.0 , 0.0 );
+				finalColor = float4( saturate( appendResult85 ), 0.0 , 0.0 );
 				return finalColor;
 			}
 			ENDCG
@@ -175,6 +175,7 @@ Node;AmplifyShaderEditor.ScaleNode;29;624,-272;Inherit;False;1;1;0;FLOAT;0;False
 Node;AmplifyShaderEditor.LerpOp;83;832,-368;Inherit;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0.2;False;1;FLOAT;0
 Node;AmplifyShaderEditor.LerpOp;26;800,-720;Inherit;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;1;FLOAT;0
 Node;AmplifyShaderEditor.DynamicAppendNode;85;1024,-480;Inherit;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0
+Node;AmplifyShaderEditor.SaturateNode;108;1264,-480;Inherit;False;1;0;FLOAT2;0,0;False;1;FLOAT2;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;3;1504,-480;Float;False;True;-1;2;ASEMaterialInspector;100;5;Hidden/PaintShader;0770190933193b94aaa3065e307002fa;True;Unlit;0;0;Unlit;2;False;True;0;1;False;;0;False;;0;1;False;;0;False;;True;0;False;;0;False;;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;1;RenderType=Opaque=RenderType;True;2;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;0;;0;0;Standard;1;Vertex Position,InvertActionOnDeselection;1;0;0;1;True;False;;False;0
 WireConnection;5;0;4;1
 WireConnection;5;1;4;2
@@ -212,6 +213,7 @@ WireConnection;26;0;88;0
 WireConnection;26;2;29;0
 WireConnection;85;0;26;0
 WireConnection;85;1;83;0
-WireConnection;3;0;85;0
+WireConnection;108;0;85;0
+WireConnection;3;0;108;0
 ASEEND*/
-//CHKSM=666301D746AB465837ADFD5B92E726B4A98BF148
+//CHKSM=D57109F758AD02F465C3691FD66240A5C694F0E8

@@ -19,26 +19,21 @@ public class BrushProjectorTouch : MonoBehaviour {
     private Material gizmoObjectMaterial;
 
     void Start() {
-        // Ініціалізація RenderTexture
         paintedRT = new RenderTexture(512, 512, 0, RenderTextureFormat.RGHalf) {
             enableRandomWrite = true
         };
         
-        // Ініціалізація матеріалу
         paintMaterial = new Material(paintMaskShader);
         paintMaterial.SetTexture("_PreviousTexture", paintedRT);
 
-        // Ініціалізація CommandBuffer
         cmd = new CommandBuffer { name = "Draw Painted Texture" };
 
-        // Отримання матеріалу Gizmo
         gizmoObjectMaterial = gizmoObject.GetComponent<MeshRenderer>().sharedMaterial;
     }
 
     void Update() {
         bool paint = false;
 
-        // Отримання позиції торкання
         Vector2 position = Vector2.zero;
         if (Input.touchCount > 0) {
             Touch touch = Input.GetTouch(0);
@@ -48,7 +43,6 @@ public class BrushProjectorTouch : MonoBehaviour {
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, paintableLayers)) {
                 hitPoint = hit.point;
 
-                // Обчислення UV через Bounds
                 Bounds planeBounds = hit.collider.GetComponent<Renderer>().bounds;
 
                 hitUV = new Vector2(

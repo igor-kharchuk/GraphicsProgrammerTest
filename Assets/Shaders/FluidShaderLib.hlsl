@@ -76,7 +76,7 @@ float DiffuseLighting(float3 normal, float3 lightDir)
     return smoothstep(-1, 1, dot(normal, lightDir));
 }
 
-float3 SpecularLighting(float3 normal, float3 viewDir, float3 lightDir, float smoothness, float3 glossinessColor)
+half3 SpecularLighting(float3 normal, float3 viewDir, float3 lightDir, float smoothness, half3 glossinessColor)
 {
 	float3 halfDir = normalize(lightDir + viewDir); 
 	float N = smoothness * 128.0;
@@ -86,22 +86,41 @@ float3 SpecularLighting(float3 normal, float3 viewDir, float3 lightDir, float sm
 	return specIntensity * glossinessColor * energyCompensation;
 }
 
-float3 SpecularEnvironment(samplerCUBE Cubemap, float roughness, float lodSteps, float3 viewDir, float3 normal)
+half3 SpecularEnvironment(samplerCUBE Cubemap, half roughness, float lodSteps, float3 viewDir, float3 normal)
 {
 	float3 coords = reflect(-viewDir, normal);
 	float mip = PerceptualRoughnessToMipmap(roughness, lodSteps);
-	float3 specEnv = texCUBElod(Cubemap, float4(coords.x, coords.y, coords.z, mip)).rgb;
+	half3 specEnv = texCUBElod(Cubemap, float4(coords.x, coords.y, coords.z, mip)).rgb;
 	return specEnv;
 }
 
-float3 CalculateLighting (sampler2D DiffuseGradientTex, float3 DiffuseTint, float3 glossinessColor, 
+half3 CalculateLighting (sampler2D DiffuseGradientTex, half3 DiffuseTint, half3 glossinessColor, 
 	float smoothness, float3 normal, float3 lightDir, float3 viewDir) 
 {
 	float diff = DiffuseLighting(normal, lightDir);
-	float3 diffColored = tex2D(DiffuseGradientTex, float2(diff, 0)).rgb * DiffuseTint;
+	half3 diffColored = tex2D(DiffuseGradientTex, float2(diff, 0)).rgb * DiffuseTint;
 
 	smoothness = max(smoothness, 0.001);
-	float3 specColored = SpecularLighting(normal, viewDir, lightDir, smoothness, glossinessColor);
+	half3 specColored = SpecularLighting(normal, viewDir, lightDir, smoothness, glossinessColor);
 
 	return diffColored + specColored;
+}
+
+//..........HELPERS..........//
+
+half3 BlendSoftLight(half3 baseColor, half3 blendColor, half alpha)
+{
+    half3 softLight = lerp(
+        2.0 * baseColor * blendColor + baseColor * baseColor * (1.0 - 2.0 * blendColor),
+        sqrt(baseColor) * (2.0 * blendColor - 1.0) + 2.0 * baseColor * (1.0 - blendColor),
+        step(0.5, blendColor)
+    );
+
+    return lerp(baseColor, saturate(softLight), alpha);
+}
+
+half3 Desaturation(half3 color, half desaturationAmount)
+{
+    half luminance = dot(color, half3(0.299, 0.587, 0.114));
+    return lerp(color, half3(luminance, luminance, luminance), desaturationAmount);
 }

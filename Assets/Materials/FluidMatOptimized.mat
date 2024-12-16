@@ -70,9 +70,9 @@ Material:
     - _AddPrecomputedVelocity: 1
     - _AlphaCutoff: 0.5
     - _Bias: 0
-    - _CubemapDesaturation: 0.029
+    - _CubemapDesaturation: 1
     - _CubemapFresnel: 1
-    - _CubemapInfluince: 1
+    - _CubemapInfluince: 0.591
     - _CubemapMip: 1.99
     - _Float0: 8
     - _Gloss: 0.614
@@ -102,10 +102,10 @@ Material:
     - _shininess: 23.2
     m_Colors:
     - _ColorTint: {r: 1, g: 1, b: 1, a: 0}
-    - _CubemapTInt: {r: 0.9779122, g: 0.74996555, b: 0.21571566, a: 0}
-    - _DiffuseTint: {r: 0.3979832, g: 0.3979832, b: 0.3979832, a: 0}
+    - _CubemapTInt: {r: 0.9262358, g: 1, b: 0.68789846, a: 0}
+    - _DiffuseTint: {r: 0.5770563, g: 0.5770563, b: 0.5770563, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GlosinessColor: {r: 0.93954486, g: 1, b: 0.28461498, a: 0}
+    - _GlosinessColor: {r: 0.14458942, g: 0.15389305, b: 0.04380027, a: 0}
     - _RimColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 0.8503065, b: 0.5019635, a: 0}
     - _SpecularTint: {r: 1.920313, g: 2.57201, b: 2.670157, a: 0}
